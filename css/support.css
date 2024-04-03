@@ -1,0 +1,60 @@
+.support{
+    display: flex;
+    gap: 0vw;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 8vw;
+    margin-top: 8vh;
+}
+
+.support-info{
+    flex-basis: 100%;
+    margin-bottom: 4vh;
+    margin-left: 1vw;
+    font-size: 2rem;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.left-container{
+    width: 40vw;
+    height: 60vh;
+    border-radius: 17px;
+    color: whitesmoke;
+    background-color: rgba(41, 41, 41, 0.8);
+}
+
+.left-container .support-title{
+    flex-basis: 100vw;
+    text-align: center;
+    margin: 4vh;
+}
+
+.support-title label{
+    font-family: Roboto;
+    font-size: 1.5rem;
+    margin-left: 4vw;
+}
+
+.left-container .support-form{
+    width: auto;
+    margin-left: 3vw;
+}
+
+.right-container{
+    overflow: hidden;
+    width: 40vw;
+    margin: auto;
+}
+
+.right-container img{
+    height: auto;
+    width: 40vw;
+    border-radius: 17px;
+}
+
+.form-group{
+    margin-bottom: 1.5vh;
+    width: 30vw;
+}

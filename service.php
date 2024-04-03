@@ -29,7 +29,7 @@
         </div>
 
         <div class="services">
-            <a href="#">
+            <a href="support.php">
                 <div class="service">
                     <div class="image">
                         <img src="images/support.jpg">
@@ -40,7 +40,7 @@
                 </div>
             </a>
 
-            <a href="#">
+            <a href="store.php">
                 <div class="service">
                     <div class="image">
                         <img src="images/store.webp">

@@ -1,0 +1,79 @@
+.store{
+    width: 90vw;
+    min-height: 100vh;
+    margin: auto;
+    padding: 6vh;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    background-color: rgba(41, 41, 41, 0.8);
+    border-radius: 17px;
+    color: whitesmoke;
+}
+
+.store .title{
+    display: flex;
+    font-size: 2rem;
+}
+
+.store .title .name{
+    font-family: Righteous;
+    padding: 0 1vw 0;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    color: black;
+    width: fit-content;
+}
+
+.store .title .name .agri{
+    color: #7DBA34;
+}
+
+.content{
+    margin: 8vh 8vw;
+    display: flex;
+    gap: 11vw;
+    flex-wrap: wrap;
+}
+
+.content .item{
+    width: 15vw;
+    height: 40vh;
+    border-radius: 17px;
+    overflow: hidden;
+    background-color: whitesmoke;
+    color: black;
+    transition: 0.3s;
+}
+
+.content .item:hover .item-image{
+    background-color: whitesmoke;
+}
+
+.content .item:hover {
+    background-color: #7DBA34;
+    transform: scale(1.1);
+}
+
+.content .item .item-image{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .item .item-image img{
+    width: auto;
+    height: 30vh;
+}
+
+.item .item-info{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1vh 1vw 1vh;
+}
+
+.item-info .item-title{
+    flex-basis: 100%;
+    font-weight: bold;
+}
+
