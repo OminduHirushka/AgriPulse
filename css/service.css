@@ -1,0 +1,64 @@
+.service-title{
+    margin: 8vh auto;
+    width: 25vw;
+    background-color: rgba(41, 41, 41, 0.8);
+    font-size: 3rem;
+    text-align: center;
+    color: whitesmoke;
+    padding: 1vh 0 1vh;
+    border-radius: 17px;
+}
+
+.services{
+    width: 80vw;
+    display: flex;
+    gap: 6vw;
+    justify-content: center;
+    align-items: center;
+    margin: 15vh auto;
+    padding-top: 2vh;
+    padding-bottom: 20vh;
+    
+
+}
+
+.services a{
+    text-decoration: none;
+}
+
+.service{
+    display: grid;
+    width: 20vw;
+    height: 40vh;
+    text-align: center;
+    background-color: rgb(41, 41, 41);
+    border-radius: 17px;
+    transition: 0.3s;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.service:hover{
+    transform: scale(1.1);
+    background-color: #7DBA34;
+}
+
+.service:hover .text{
+    color: black;
+}
+
+.service img{
+    width: auto;
+    height: 30vh;
+    align-self: center;
+    justify-self: center;
+}
+
+.service .text{
+    width: 20vw;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+

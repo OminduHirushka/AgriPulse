@@ -6,9 +6,9 @@
     <div class="links">
         <div class="link_item"><a href="index.php">Home</a></div>
         <div class="link_item"><a href="about.php">About Us</a></div>
-        <div class="link_item"><a href="#">Services</a></div>
+        <div class="link_item"><a href="service.php">Services</a></div>
         <div class="link_item">
-            <div class="account-dropdown"><a href="#">Account</a>
+            <div class="account-dropdown"><a href="account.php">Account</a>
                 <div class="dropdown-content">
                     <div class="link_item"><a href="#"><i class="bi bi-person-fill"></i>Farmer</a></div>
                     <div class="link_item"><a href="o#"><i class="bi bi-person-fill"></i>Field-Officer</a></div>
