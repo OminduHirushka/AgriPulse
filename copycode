@@ -1,0 +1,26 @@
+<?php 
+    require_once 'dbConnection.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--title-->
+    <title>AgriPulse | Sri Lanka's Sustainable Farming Hub</title>
+
+    <!--css-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <?php
+        include 'includes/header.php';
+    ?>
+</head>
+
+<body>
+    <?php
+        include 'includes/footer.php';
+    ?>
+</body>
+
+</html>

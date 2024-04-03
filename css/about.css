@@ -1,0 +1,144 @@
+.main{
+    background : url("../images/about-2.jpg") !important;
+    height: fit-content;
+    color: whitesmoke;
+    background-position:0%;
+    background-size: cover;
+    
+}
+
+.content{
+    margin: 5vh 5vw 0;
+    height: fit-content;
+}
+
+.content .about-us{
+    display: flex;
+    justify-content: center;
+    margin: 3vh 0 3vh;
+    background-color: rgba(106, 103, 103, 0.31);
+    border-radius: 17px;
+    padding: 2vh 1vw 2vh;
+    gap: 2vw;
+}
+
+.about-us .about-title{
+    width: 100%;
+    font-size: 3rem;
+}
+
+.about-us .about-info{
+    margin: 1vh 0 1vh;
+    font-size: 1.3rem;
+}
+
+.about-us .left-container{
+    width: 65vw;
+    text-align: justify;
+}
+
+.about-us .right-container{
+    width: 35vw;
+    display:contents;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-us img{
+    width: 15vw;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.vision-mission{
+    margin-top: 8vh;
+    display: flex;
+    gap: 5vw;
+    justify-content: center;
+}
+
+.vision-mission .left-container{
+    width: 30vw;
+    background-color: rgb(41, 41, 41);
+    border-radius: 7px;  
+}
+
+.vision-mission .right-container{
+    width: 30vw;
+    background-color: rgb(41, 41, 41);
+    border-radius: 17px;
+}
+
+.mission{
+    margin: 3vw;
+    
+}
+
+.mission .mission-header{
+    font-size: 2rem;
+}
+
+.mission .mission-title{
+    font-weight: bold;
+    margin: 1vh 0 1vh;
+    color: #7DBA34;
+}
+
+.mission .mission-content{
+    font-weight: lighter;
+}
+
+.vision{
+    margin: 3vw;
+}
+
+.vision .vision-header{
+    font-size: 2rem;
+}
+
+.vision .vision-title{
+    font-weight: bold;
+    margin: 1vh 0 1vh;
+    color: #7DBA34;
+}
+
+.vision .vision-content{
+    font-weight: lighter;
+}
+
+.commitment-container{
+    padding: 7vh 0 5vh;
+}
+
+.commitment-title{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 3vh;
+    font-size: 2rem;
+}
+
+.commitment{
+    align-items: center;
+    display: flex;
+    gap: 5vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.commitment .c{
+    width: 25vw;
+    padding: 3vh 2vw 3vh 2vw;
+    text-align: center;
+    background-color: rgb(41, 41, 41);
+    border-radius: 17px;
+}
+
+.c .c-title{
+    font-weight: bold;
+    margin: 1vh 0 1vh;
+    color: #7DBA34;
+}
+
+.c .c-body{
+    font-weight: lighter;
+}

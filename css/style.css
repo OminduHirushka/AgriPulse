@@ -95,7 +95,7 @@
 
 .account-dropdown:hover .dropdown-content{
     font-family: 'Poppins', sans-serif;
-    margin: 0px 1.5vw 0px;
+    margin: 0 1.5vw 0;
     transition: transform 0.3s, color 0.3s;
     text-decoration: none; 
     color: #000;
