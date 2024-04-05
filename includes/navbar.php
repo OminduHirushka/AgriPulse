@@ -11,8 +11,8 @@
             <div class="account-dropdown"><a href="account.php">Account</a>
                 <div class="dropdown-content">
                     <div class="link_item"><a href="farmerlogin.php"><i class="bi bi-person-fill"></i>Farmer</a></div>
-                    <div class="link_item"><a href="o#"><i class="bi bi-person-fill"></i>Field-Officer</a></div>
-                    <div class="link_item"><a href="#"><i class="bi bi-person-fill"></i>Admin</a></div>
+                    <div class="link_item"><a href="officerlogin.php"><i class="bi bi-person-fill"></i>Field-Officer</a></div>
+                    <div class="link_item"><a href="adminlogin.php"><i class="bi bi-person-fill"></i>Admin</a></div>
                 </div>
             </div>
         </div>

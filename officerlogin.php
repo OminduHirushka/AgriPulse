@@ -7,11 +7,11 @@
 
 <head>
     <!--title-->
-    <title>AgriPulse | Login - Farmer</title>
+    <title>AgriPulse | Login - Field Officer</title>
 
     <!--css-->
-    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
 
     <?php
         include 'includes/header.php';
@@ -32,9 +32,9 @@
                             <div class="col-lg-6">
                                 <div class="card-body p-md-5 mx-md-4">
                                     <div class="text-center">
-                                        <h4>We Are The <label style="color: #7DBA34;">Agri</label>Pulse Team</h4>
+                                        <h4>We are The Eco<label style="color: #7DBA34;">Agri</label>Link Team</h4>
                                         <br>
-                                        <h5 class="mt-1 mb-5 pb-1">Login - Farmer</h5>
+                                        <h5 class="mt-1 mb-5 pb-1">Login - Field Officer</h5>
                                     </div>
 
                                     <form method="POST">
@@ -51,17 +51,11 @@
 
                                         <div class="text-center">
                                             <button class="btn btn-success btn-block fa-lg mb-3" type="submit"
-                                                name="farmerlogin-btn">Log-In</button>
+                                                name="officerlogin-btn">Log-In</button>
                                         </div>
 
                                         <div class="text-center pt-1 mb-5 pb-1">
-                                            <a class="text-muted" href="farmar-forgotpassword.php">Forgot Password?</a>
-                                        </div>
-
-                                        <div class="d-flex align-items-center justify-content-center pb-4">
-                                            <p class="mb-0 me-2">Don't have an account?</p>
-                                            <a href="farmerregister.php"><button type="button"
-                                                    class="btn btn-outline-success">Register</button></a>
+                                            <a class="text-muted" href="#!">Forgot Password?</a>
                                         </div>
                                     </form>
                                 </div>

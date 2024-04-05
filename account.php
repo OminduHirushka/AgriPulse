@@ -40,7 +40,7 @@
                 </div>
             </a>
 
-            <a href="#">
+            <a href="officerlogin.php">
                 <div class="service">
                     <div class="image">
                         <img src="images/officer.jpg">
@@ -51,7 +51,7 @@
                 </div>
             </a>
 
-            <a href="#">
+            <a href="adminlogin.php">
                 <div class="service">
                     <div class="image">
                         <img src="images/admin.jpg">
