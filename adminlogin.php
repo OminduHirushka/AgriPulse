@@ -1,5 +1,5 @@
-<?php 
-    require_once 'dbConnection.php';
+<?php
+require_once 'dbConnection.php';
 ?>
 
 <!DOCTYPE html>
@@ -14,14 +14,14 @@
     <link rel="stylesheet" href="css/login.css">
 
     <?php
-        include 'includes/header.php';
+    include 'includes/header.php';
     ?>
 </head>
 
 <body>
     <div class="main">
         <?php
-            include 'includes/navbar.php';
+        include 'includes/navbar.php';
         ?>
 
         <div class="container py-5 h-100">
@@ -61,7 +61,8 @@
                                 <div class="px-3 py-4 p-md-5 mx-md-4">
                                     <h4 class="mb-4">Welcome to the <label style="color: #7DBA34;">Agri</label>Pulse,
                                         Sri Lanka.</h4>
-                                    <p class="small mb-0 text-align-justify">AgriPulse is a vital resource for the agricultural industry,
+                                    <p class="small mb-0 text-align-justify">AgriPulse is a vital resource for the
+                                        agricultural industry,
                                         providing a comprehensive platform for staying updated on trends, innovations,
                                         and news. With a dedicated team of experts, AgriPulse empowers farmers,
                                         policymakers, and industry stakeholders to foster a thriving agricultural
@@ -76,7 +77,42 @@
     </div>
 
     <?php
-        include 'includes/footer.php';
+    function showAlert($message) {
+        echo '<script>alert("' . $message . '");</script>';
+    }
+
+    if (isset($_POST['adminlogin-btn'])) {
+        $email = $_POST["email"];
+        $password = $_POST["pass"];
+
+        if (empty($email) || empty($password)) {
+            showAlert("Email and Password Are Required!");
+        } else {
+            $email = mysqli_real_escape_string($conn, $email);
+            $password = mysqli_real_escape_string($conn, $password);
+
+            $sql = "SELECT * FROM admins WHERE email = '$email' AND pass = '$password'";
+            $result = mysqli_query($conn, $sql);
+
+            if ($result) {
+                if (mysqli_num_rows($result) == 1) {
+                    $_SESSION['email'] = $email;
+                    header("Location: Operations/dashboard-admin.php");
+                    exit();
+                } else {
+                    showAlert('Invalid Email or Password. Please try again.');
+                    ;
+                }
+            } else {
+                showAlert("Error: " . mysqli_error($conn));
+            }
+        }
+    }
+    mysqli_close($conn);
+    ?>
+
+    <?php
+    include 'includes/footer.php';
     ?>
 </body>
 

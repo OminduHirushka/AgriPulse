@@ -1,5 +1,5 @@
-<?php 
-    require_once 'dbConnection.php';
+<?php
+require_once 'dbConnection.php';
 ?>
 
 <!DOCTYPE html>
@@ -14,14 +14,14 @@
     <link rel="stylesheet" href="css/login.css">
 
     <?php
-        include 'includes/header.php';
+    include 'includes/header.php';
     ?>
 </head>
 
 <body>
     <div class="main">
         <?php
-            include 'includes/navbar.php';
+        include 'includes/navbar.php';
         ?>
 
         <div class="container py-5 h-100">
@@ -80,7 +80,45 @@
     </div>
 
     <?php
-        include 'includes/footer.php';
+    function showAlert($message)
+    {
+        echo '<script>alert("' . $message . '");</script>';
+    }
+
+    if (isset($_POST['officerlogin-btn'])) {
+        $email = $_POST["email"];
+        $password = $_POST["pass"];
+
+        if (empty($email) || empty($password)) {
+            showAlert("Email and Password Are Required!");
+        } else {
+            $email = mysqli_real_escape_string($conn, $email);
+            $password = mysqli_real_escape_string($conn, $password);
+
+            $sql = "SELECT * FROM officer WHERE email = '$email' AND pass = '$password'";
+            $result = mysqli_query($conn, $sql);
+
+            if ($result) {
+                if (mysqli_num_rows($result) == 1) {
+
+                    $_SESSION['email'] = $email;
+                    header("Location: Operations/dashboard-officer.php");
+
+                    exit();
+                } else {
+                    showAlert('Invalid Email or Password. Please try again.');
+                    ;
+                }
+            } else {
+                showAlert("Error: " . mysqli_error($conn));
+            }
+        }
+    }
+    mysqli_close($conn);
+    ?>
+
+    <?php
+    include 'includes/footer.php';
     ?>
 </body>
 
