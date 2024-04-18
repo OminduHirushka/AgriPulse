@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     require_once 'dbConnection.php';
 ?>
 
@@ -10,17 +11,18 @@
     <title>AgriPulse | Sri Lanka's Sustainable Farming Hub</title>
 
     <!--css-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <?php
-        include 'includes/header.php';
+        include './includes/header.php';
     ?>
 </head>
 
 <body>
     <div class="main">
         <?php
-            include 'includes/navbar.php';
+            include './includes/navbar.php';
         ?>
 
         

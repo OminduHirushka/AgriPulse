@@ -1,0 +1,28 @@
+.main{
+    background : url("../images/about-2.jpg") !important; 
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    min-height: 100vh;
+    height: max-content;
+    padding-bottom: 4vh;
+}
+
+.container{
+    margin-top: 5vh;
+    text-align: center;
+}
+
+.container .topic{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    margin-left: 40%;
+    margin-right: 40%;
+    padding: 0 1vw 0;
+    font-size: 3vw;
+    background-color: rgb(203, 243, 162);
+    border-radius: 5px;
+}
+
+.container .table td{
+    vertical-align: bottom;
+}
