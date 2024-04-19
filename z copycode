@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    require_once './dbConnection.php';
+    require_once '../dbConnection.php';
 ?>
 
 <!DOCTYPE html>
@@ -15,14 +15,14 @@
     <link rel="stylesheet" href="../css/style.css">
 
     <?php
-        include './includes/header.php';
+        include '../includes/header.php';
     ?>
 </head>
 
 <body>
     <div class="main">
         <?php
-            include './includes/navbar.php';
+            include '../includes/navbar.php';
         ?>
 
         

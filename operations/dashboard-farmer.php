@@ -23,7 +23,7 @@ $email = $_SESSION['email'];
     <link rel="stylesheet" href="../css/style.css">
 
     <?php
-    include './includes/header.php';
+    include '../includes/header.php';
     ?>
 </head>
 
@@ -67,7 +67,6 @@ $email = $_SESSION['email'];
                             <th scope="col">Mobile</th>
                             <th scope="col">District</th>
                             <th scope="col">Password</th>
-                            <th scope="col">Operations</th>
                         </tr>
                     </thead>
 
@@ -97,10 +96,6 @@ $email = $_SESSION['email'];
                                         <td>' . $mobile . '</td>
                                         <td>' . $district . '</td>
                                         <td>' . $pass . '</td>
-
-                                        <td>
-                                            <button type="button" class="btn btn-outline-info btn-sm mb-1"><a href="farmer-update.php?updatedid=' . $id . '" class="text-dark">Update</a></button>
-                                        </td>
                                     </tr>';
                             }
                         }
@@ -112,7 +107,7 @@ $email = $_SESSION['email'];
     </div>
 
     <?php
-    include './includes/footer.php';
+    include '../includes/footer.php';
     ?>
 </body>
 
