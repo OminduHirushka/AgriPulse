@@ -1,5 +1,44 @@
 <?php
 require_once 'dbConnection.php';
+
+function showAlert($message)
+    {
+        echo '<script>alert("' . $message . '");</script>';
+    }
+    $fname = $lname = $uname = $email = $mobile = $district = $pass = "";
+
+    if (isset($_POST['farmersignup-btn'])) {
+        $fname = $_POST["fname"];
+        $lname = $_POST["lname"];
+        $uname = $_POST["uname"];
+        $email = $_POST["email"];
+        $mobile = $_POST["mobile"];
+        $district = $_POST["district"];
+        $pass = $_POST["pass"];
+        $confirm = $_POST["confirm"];
+
+        $check_uname = "SELECT * FROM farmars WHERE uname = '$uname'";
+        $result1 = $conn->query($check_uname);
+
+        $check_email = "SELECT * FROM farmars WHERE email = '$email'";
+        $result2 = $conn->query($check_email);
+
+        if ($result1->num_rows > 0) {
+            showAlert("Username is already taken. Please choose another username!");
+        } else if ($result2->num_rows > 0) {
+            showAlert("Email is already taken. Please choose another email!");
+        } else if ($pass != $confirm) {
+            showAlert("Passwords must be matched!");
+        } else {
+            $sql = "INSERT INTO farmars (fname, lname, uname, email, mobile, district, pass) VALUES ('$fname', '$lname', '$uname', '$email', '$mobile', '$district', '$pass')";
+
+            if (mysqli_query($conn, $sql)) {
+                showAlert("Succefully Registered!");
+            } else {
+                echo mysqli_error($conn);
+            }
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -150,47 +189,6 @@ require_once 'dbConnection.php';
             </div>
         </div>
     </div>
-
-    <?php
-    function showAlert($message)
-    {
-        echo '<script>alert("' . $message . '");</script>';
-    }
-    $fname = $lname = $uname = $email = $mobile = $district = $pass = "";
-
-    if (isset($_POST['farmersignup-btn'])) {
-        $fname = $_POST["fname"];
-        $lname = $_POST["lname"];
-        $uname = $_POST["uname"];
-        $email = $_POST["email"];
-        $mobile = $_POST["mobile"];
-        $district = $_POST["district"];
-        $pass = $_POST["pass"];
-        $confirm = $_POST["confirm"];
-
-        $check_uname = "SELECT * FROM farmars WHERE uname = '$uname'";
-        $result1 = $conn->query($check_uname);
-
-        $check_email = "SELECT * FROM farmars WHERE email = '$email'";
-        $result2 = $conn->query($check_email);
-
-        if ($result1->num_rows > 0) {
-            showAlert("Username is already taken. Please choose another username!");
-        } else if ($result2->num_rows > 0) {
-            showAlert("Email is already taken. Please choose another email!");
-        } else if ($pass != $confirm) {
-            showAlert("Passwords must be matched!");
-        } else {
-            $sql = "INSERT INTO farmars (fname, lname, uname, email, mobile, district, pass) VALUES ('$fname', '$lname', '$uname', '$email', '$mobile', '$district', '$pass')";
-
-            if (mysqli_query($conn, $sql)) {
-                showAlert("Succefully Registered!");
-            } else {
-                echo mysqli_error($conn);
-            }
-        }
-    }
-    ?>
 
     <?php
     include 'includes/footer.php';

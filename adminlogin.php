@@ -1,5 +1,39 @@
 <?php
+session_start();
 require_once 'dbConnection.php';
+
+function showAlert($message) {
+    echo '<script>alert("' . $message . '");</script>';
+}
+
+if (isset($_POST['adminlogin-btn'])) {
+    $email = $_POST["email"];
+    $password = $_POST["pass"];
+
+    if (empty($email) || empty($password)) {
+        showAlert("Email and Password Are Required!");
+    } else {
+        $email = mysqli_real_escape_string($conn, $email);
+        $password = mysqli_real_escape_string($conn, $password);
+
+        $sql = "SELECT * FROM admins WHERE email = '$email' AND pass = '$password'";
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            if (mysqli_num_rows($result) == 1) {
+                $_SESSION['email'] = $email;
+                header("Location: Operations/dashboard-admin.php");
+                exit();
+            } else {
+                showAlert('Invalid Email or Password. Please try again.');
+                ;
+            }
+        } else {
+            showAlert("Error: " . mysqli_error($conn));
+        }
+    }
+}
+mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -75,41 +109,6 @@ require_once 'dbConnection.php';
             </div>
         </div>
     </div>
-
-    <?php
-    function showAlert($message) {
-        echo '<script>alert("' . $message . '");</script>';
-    }
-
-    if (isset($_POST['adminlogin-btn'])) {
-        $email = $_POST["email"];
-        $password = $_POST["pass"];
-
-        if (empty($email) || empty($password)) {
-            showAlert("Email and Password Are Required!");
-        } else {
-            $email = mysqli_real_escape_string($conn, $email);
-            $password = mysqli_real_escape_string($conn, $password);
-
-            $sql = "SELECT * FROM admins WHERE email = '$email' AND pass = '$password'";
-            $result = mysqli_query($conn, $sql);
-
-            if ($result) {
-                if (mysqli_num_rows($result) == 1) {
-                    $_SESSION['email'] = $email;
-                    header("Location: Operations/dashboard-admin.php");
-                    exit();
-                } else {
-                    showAlert('Invalid Email or Password. Please try again.');
-                    ;
-                }
-            } else {
-                showAlert("Error: " . mysqli_error($conn));
-            }
-        }
-    }
-    mysqli_close($conn);
-    ?>
 
     <?php
     include 'includes/footer.php';

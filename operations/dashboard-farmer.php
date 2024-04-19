@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'dbConnection.php';
+require_once '../dbConnection.php';
 
 if (!isset($_SESSION['email'])) {
     header("Location: ../farmerlogin.php");
