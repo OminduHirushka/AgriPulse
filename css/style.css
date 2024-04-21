@@ -2,9 +2,11 @@
     background : url("../images/background.jpg");
     background-position: center;
     background-size: cover;
+    min-width: 99vw;
+    width: fit-content;
     min-height: 100vh;
     height: max-content;
-    padding-bottom: 4vh;
+    padding-bottom: 2vh;
 }
 
 .navibar{
@@ -203,6 +205,8 @@
 }
 
 .footer{
+    min-width: 99vw;
+    width: fit-content;
     height:fit-content;
     display: grid; 
     grid-row: auto;

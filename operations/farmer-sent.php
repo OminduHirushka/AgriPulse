@@ -2,10 +2,10 @@
 session_start();
 require_once '../dbConnection.php';
 
-if(isset($_SESSION['email'])){
+if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
-}else{
-    header("Location: ../farmerlogin.php");
+} else {
+    header("Location: ../.php");
     exit();
 }
 ?>
@@ -15,7 +15,7 @@ if(isset($_SESSION['email'])){
 
 <head>
     <!--title-->
-    <title>AgriPulse | Dashboard - Farmer</title>
+    <title>AgriPulse | Sent Inquiries</title>
 
     <!--css-->
     <link rel="stylesheet" href="../css/farmer.css">
@@ -40,55 +40,50 @@ if(isset($_SESSION['email'])){
 
             <div class="column2">
                 <div class="topic">
-                    <h4 class="mt-1 mb-4 pb-1">User Details</h4>
+                    <h4 class="mt-1 mb-4 pb-1">Sent Inquiries</h4>
                 </div>
                 
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Your_ID</th>
-                            <th scope="col">FirstName</th>
-                            <th scope="col">LastName</th>
-                            <th scope="col">UserName</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Mobile</th>
-                            <th scope="col">District</th>
-                            <th scope="col">Password</th>
+                            <th scope="col">Query_ID</th>
+                            <th scope="col">Sender's Name</th>
+                            <th scope="col">Sender's Email</th>
+                            <th scope="col">Sender's Mobile</th>
+                            <th scope="col">Messsage</th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <?php
-                        $sql = "SELECT * FROM farmars WHERE email='$email'";
+
+                        $sql = "SELECT * FROM inquiries WHERE email='$email'";
                         $result = mysqli_query($conn, $sql);
 
                         if ($result) {
                             while ($row = mysqli_fetch_assoc($result)) {
-                                $id = $row['Farmer_ID'];
-                                $fname = $row['fname'];
-                                $lname = $row['lname'];
-                                $uname = $row['uname'];
+                                $id = $row['Query_ID'];
+                                $uname = $row['name'];
                                 $email = $row['email'];
-                                $mobile = $row['mobile'];
-                                $district = $row['district'];
-                                $pass = $row['pass'];
+                                $mobile = $row['contact'];
+                                $msg = $row['message'];
 
                                 echo '
                                     <tr>
                                         <th scope="row">' . $id . '</th>
-                                        <td>' . $fname . '</td>
-                                        <td>' . $lname . '</td>
                                         <td>' . $uname . '</td>
                                         <td>' . $email . '</td>
                                         <td>' . $mobile . '</td>
-                                        <td>' . $district . '</td>
-                                        <td>' . $pass . '</td>
+                                        <td>' . $msg . '</td>
                                     </tr>';
                             }
                         }
                         ?>
                     </tbody>
                 </table>
+                <button class="btn btn btn-success btn-block fa-lg mb-3"><a href="#"
+                        class=text-light>Contact an Field-Officer</a>
+                </button>
             </div>
         </div>
     </div>

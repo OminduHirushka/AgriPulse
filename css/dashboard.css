@@ -1,16 +1,21 @@
 .main{
-    background : url("../images/about-2.jpg") !important; 
-    background-position: center;
-    background-size: cover;
-    width: 100vw;
-    min-height: 100vh;
-    height: max-content;
-    padding-bottom: 4vh;
+    background : url("../images/about-2.jpg") !important;
 }
 
-.container{
+.container {
+    display: flex;
     margin-top: 5vh;
     text-align: center;
+}
+
+.column1 {
+    flex: 0.1;
+    background: transparent;
+    padding: 23px;
+}
+
+.column2 {
+    flex: 1;   
 }
 
 .container .topic{
@@ -19,6 +24,7 @@
     margin-right: 40%;
     padding: 0 1vw 0;
     font-size: 3vw;
+    text-align: center;
     background-color: rgb(203, 243, 162);
     border-radius: 5px;
 }

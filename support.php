@@ -29,7 +29,7 @@
             <div class="left-container">
                 <label class="support-title">Please Fill the following form</label>
                 <div class="support-form">
-                    <form action="#" method="POST">
+                    <form action="farmerlogin.php" method="POST">
                         <div class="form-group">
                             <input type="text" class="form-control" name="name" placeholder="Enter your name">
                         </div>

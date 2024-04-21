@@ -1,6 +1,13 @@
-<?php 
-    session_start();
-    require_once '../dbConnection.php';
+<?php
+session_start();
+require_once '../dbConnection.php';
+
+if (isset($_SESSION['email'])) {
+    $email = $_SESSION['email'];
+} else {
+    header("Location: ../.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -8,38 +15,38 @@
 
 <head>
     <!--title-->
-    <title>AgriPulse | Sri Lanka's Sustainable Farming Hub</title>
+    <title>AgriPulse | </title>
 
     <!--css-->
+    <link rel="stylesheet" href="../css/farmer.css">
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/style.css">
 
     <?php
-        include '../includes/header.php';
+    include '../includes/header.php';
     ?>
 </head>
 
 <body>
     <div class="main">
         <?php
-            include '../includes/navbar.php';
+        include 'includes/farmerNavbar.php';
         ?>
 
-        
+        <div class="container">
+            <?php
+            include 'includes/farmerSidemenu.php';
+            ?>
 
 
 
 
 
-
-
-
-
-
+        </div>
     </div>
 
     <?php
-        include 'includes/footer.php';
+    include '../includes/footer.php';
     ?>
 </body>
 
