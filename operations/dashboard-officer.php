@@ -48,6 +48,7 @@ if (isset($_SESSION['email'])) {
                         <th scope="col">Mobile</th>
                         <th scope="col">District</th>
                         <th scope="col">Password</th>
+                        <th scope="col">Operations</th>
                     </tr>
                 </thead>
 
@@ -77,6 +78,10 @@ if (isset($_SESSION['email'])) {
                                     <td>' . $mobile . '</td>
                                     <td>' . $district . '</td>
                                     <td>' . $pass . '</td>
+
+                                    <td>
+                                        <button type="button" class="btn btn-outline-info btn-sm mb-1"><a href="officer-update.php?updatedid=' . $id . '" class="text-dark">Update</a></button>
+                                    </td>
                                 </tr>';
                         }
                     }
