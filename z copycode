@@ -5,7 +5,7 @@ require_once '../dbConnection.php';
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
 } else {
-    header("Location: ../.php");
+    header("Location: ../adminlogin.php");
     exit();
 }
 ?>
@@ -29,13 +29,11 @@ if (isset($_SESSION['email'])) {
 <body>
     <div class="main">
         <?php
-        include 'includes/farmerNavbar.php';
+        include 'includes/adminNavbar.php';
         ?>
 
         <div class="container">
-            <?php
-            include 'includes/farmerSidemenu.php';
-            ?>
+            
 
 
 
