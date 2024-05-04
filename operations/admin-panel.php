@@ -15,7 +15,7 @@ if (isset($_SESSION['email'])) {
 
 <head>
     <!--title-->
-    <title>AgriPulse | Dashboard - Administrator</title>
+    <title>AgriPulse | </title>
 
     <!--css-->
     <link rel="stylesheet" href="../css/dashboard.css">
@@ -34,13 +34,12 @@ if (isset($_SESSION['email'])) {
 
         <div class="container">
             <div class="topic">
-                <h4 class="mt-1 mb-4 pb-1">User Details</h4>
+                <h4 class="mt-1 mb-4 pb-1">Administrator Panel</h4>
             </div>
-
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Your_ID</th>
+                        <th scope="col">Admin_ID</th>
                         <th scope="col">FirstName</th>
                         <th scope="col">LastName</th>
                         <th scope="col">UserName</th>
@@ -54,7 +53,7 @@ if (isset($_SESSION['email'])) {
 
                 <tbody>
                     <?php
-                    $sql = "SELECT * FROM admins WHERE email='$email'";
+                    $sql = "SELECT * FROM admins";
                     $result = mysqli_query($conn, $sql);
 
                     if ($result) {
@@ -80,6 +79,7 @@ if (isset($_SESSION['email'])) {
                                     <td>' . $pass . '</td>
                                     <td>
                                         <button type="button" class="btn btn-outline-info btn-sm mb-1"><a href="admin-update.php?updatedid=' . $id . '" class="text-dark">Update</a></button>
+                                        <button type="button" class="btn btn-outline-danger btn-sm"><a href="admin-delete.php?deletedid=' . $id . '" class="text-dark">Delete</a></button>
                                     </td>
                                 </tr>';
                         }
@@ -87,6 +87,8 @@ if (isset($_SESSION['email'])) {
                     ?>
                 </tbody>
             </table>
+
+            <button class="btn btn btn-success btn-block fa-lg mb-3"><a href="admin-add.php" class=text-light>Add New</a></button>
         </div>
     </div>
 

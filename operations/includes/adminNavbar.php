@@ -6,7 +6,7 @@
     <div class="links">
         <div class="link_item"><a href="#">Farmers</a></div>
         <div class="link_item"><a href="#">Field-Officers</a></div>
-        <div class="link_item"><a href="#">Administrators</a></div>
+        <div class="link_item"><a href="admin-panel.php">Administrators</a></div>
         <div class="link_item"><a href="#">Inqueries</a></div>
         <div class="link_item"><a href="#">Replies</a></div>
         <div class="link_item"><a href="dashboard-admin.php"><i class="bi bi-person-fill"></i><?php echo $email; ?></a>

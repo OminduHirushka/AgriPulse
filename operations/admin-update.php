@@ -46,7 +46,7 @@ if (isset($_POST['update-btn'])) {
 
 <head>
     <!--title-->
-    <title>AgriPulse | </title>
+    <title>AgriPulse | Update - Update User Account</title>
 
     <!--css-->
     <link rel="stylesheet" href="../css/dashboard.css">
