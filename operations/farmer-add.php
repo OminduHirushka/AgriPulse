@@ -2,43 +2,6 @@
 session_start();
 require_once '../dbConnection.php';
 
-function showAlert($message){
-    echo '<script>alert("' . $message . '");</script>';
-}
-
-$fname = $lname = $uname = $email = $mobile = $district = $pass = "";
-
-if (isset($_POST['add-btn'])) {
-    $fname = $_POST["fname"];
-    $lname = $_POST["lname"];
-    $uname = $_POST["uname"];
-    $email = $_POST["email"];
-    $mobile = $_POST["mobile"];
-    $district = $_POST["district"];
-    $pass = $_POST["pass"];
-    $confirm = $_POST["confirm"];
-
-    if ($pass != $confirm) {
-        showAlert("Passwords must be matched!");
-    } else {
-        $sql = "INSERT INTO admins (fname, lname, uname, email, mobile, district, pass) 
-                VALUES ('$fname', '$lname', '$uname', '$email', '$mobile', '$district', '$pass')";
-
-        $result = mysqli_query($conn, $sql);
-
-        if ($result) {
-            showAlert("Succefully Added!");
-        } else {
-            echo mysqli_error($conn);
-        }
-    }
-}
-?>
-
-<?php
-session_start();
-require_once '../dbConnection.php';
-
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
 } else {
@@ -52,7 +15,7 @@ if (isset($_SESSION['email'])) {
 
 <head>
     <!--title-->
-    <title>AgriPulse | Add - Administrator</title>
+    <title>AgriPulse | Add - Farmer</title>
 
     <!--css-->
     <link rel="stylesheet" href="../css/dashboard.css">
@@ -140,11 +103,12 @@ if (isset($_SESSION['email'])) {
                 </div>
 
                 <div class="text-center" style="margin-bottom: 2rem;">
-                    <button class="btn btn-success btn-block fa-lg" type="submit" name="add-btn">Add New Administrator</button>
+                    <button class="btn btn-success btn-block fa-lg" type="submit" name="add-btn">Add New Farmer
+                    </button>
                 </div>
 
                 <div class="d-flex align-items-center justify-content-center pb-4">
-                    <a href="admin-panel.php"><button type="button" class="btn btn-info">Go Back</button></a>
+                    <a href="farmer-panel.php"><button type="button" class="btn btn-info">Go Back</button></a>
                 </div>
             </form>
         </div>

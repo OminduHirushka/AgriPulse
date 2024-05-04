@@ -15,7 +15,7 @@ if (isset($_SESSION['email'])) {
 
 <head>
     <!--title-->
-    <title>AgriPulse | List of Administrators</title>
+    <title>AgriPulse | List of Farmers</title>
 
     <!--css-->
     <link rel="stylesheet" href="../css/dashboard.css">
@@ -34,12 +34,12 @@ if (isset($_SESSION['email'])) {
 
         <div class="container">
             <div class="topic">
-                <h4 class="mt-1 mb-4 pb-1">Administrator Panel</h4>
+                <h4 class="mt-1 mb-4 pb-1">Farmer Panel</h4>
             </div>
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Admin_ID</th>
+                        <th scope="col">Farmar_ID</th>
                         <th scope="col">FirstName</th>
                         <th scope="col">LastName</th>
                         <th scope="col">UserName</th>
@@ -53,12 +53,13 @@ if (isset($_SESSION['email'])) {
 
                 <tbody>
                     <?php
-                    $sql = "SELECT * FROM admins";
+
+                    $sql = "SELECT * FROM farmars";
                     $result = mysqli_query($conn, $sql);
 
                     if ($result) {
                         while ($row = mysqli_fetch_assoc($result)) {
-                            $id = $row['Admin_ID'];
+                            $id = $row['Farmer_ID'];
                             $fname = $row['fname'];
                             $lname = $row['lname'];
                             $uname = $row['uname'];
@@ -78,8 +79,8 @@ if (isset($_SESSION['email'])) {
                                     <td>' . $district . '</td>
                                     <td>' . $pass . '</td>
                                     <td>
-                                        <button type="button" class="btn btn-outline-info btn-sm mb-1"><a href="admin-update.php?updatedid=' . $id . '" class="text-dark">Update</a></button>
-                                        <button type="button" class="btn btn-outline-danger btn-sm"><a href="admin-delete.php?deletedid=' . $id . '" class="text-dark">Delete</a></button>
+                                        <button type="button" class="btn btn-outline-info btn-sm mb-1"><a href="farmer-update.php?updatedid=' . $id . '" class="text-dark">Update</a></button>
+                                        <button type="button" class="btn btn-outline-danger btn-sm"><a href="farmer-delete.php?deletedid=' . $id . '" class="text-dark">Delete</a></button>
                                     </td>
                                 </tr>';
                         }
@@ -87,8 +88,7 @@ if (isset($_SESSION['email'])) {
                     ?>
                 </tbody>
             </table>
-
-            <button class="btn btn btn-success btn-block fa-lg mb-3"><a href="admin-add.php" class=text-light>Add an Administrator</a></button>
+            <button class="btn btn btn-success btn-block fa-lg mb-3"><a href="farmer-add.php" class=text-light>Add a Farmer</a></button>
         </div>
     </div>
 
