@@ -5,11 +5,11 @@
 
         <ul class="menu_box">
             <br>
-            <li><a class="menu_item" href="dashboard-farmer.php">Account Informations</a></li>
-            <li><a class="menu_item" href="farmer-sent.php">Sent Inquiries</a></li>
-            <li><a class="menu_item" href="farmer-received.php">Received Messages</a></li>
+            <li><a class="menu_item" href="../dashboard-farmer.php">Account Informations</a></li>
+            <li><a class="menu_item" href="../farmer-sent.php">Sent Inquiries</a></li>
+            <li><a class="menu_item" href="../farmer-received.php">Received Messages</a></li>
             <br><br><br><br><br><br><br><br><br>
-            <li><a class="menu_item" href="dashboard-farmer.php">Dashboard</a></li>
+            <li><a class="menu_item" href="../dashboard-farmer.php">Dashboard</a></li>
         </ul>
     </div>
 </div>
