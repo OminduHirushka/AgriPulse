@@ -2,8 +2,7 @@
 session_start();
 require_once '../dbConnection.php';
 
-function showAlert($message)
-{
+function showAlert($message) {
     echo '<script>alert("' . $message . '");</script>';
 }
 

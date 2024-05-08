@@ -5,7 +5,7 @@ require_once '../dbConnection.php';
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
 } else {
-    header("Location: ../.php");
+    header("Location: ../farmerlogin.php");
     exit();
 }
 ?>

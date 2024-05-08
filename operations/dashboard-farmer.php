@@ -2,9 +2,9 @@
 session_start();
 require_once '../dbConnection.php';
 
-if(isset($_SESSION['email'])){
+if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
-}else{
+} else {
     header("Location: ../farmerlogin.php");
     exit();
 }
@@ -42,7 +42,7 @@ if(isset($_SESSION['email'])){
                 <div class="topic">
                     <h4 class="mt-1 mb-4 pb-1">User Details</h4>
                 </div>
-                
+
                 <table class="table">
                     <thead>
                         <tr>
@@ -86,7 +86,7 @@ if(isset($_SESSION['email'])){
                                         <td>' . $pass . '</td>
 
                                         <td>
-                                            <button type="button" class="btn btn-outline-info btn-sm mb-1"><a href="farmer-update.php?updatedid='.$id.'" class="text-dark">Update</a></button>
+                                            <button type="button" class="btn btn-outline-info btn-sm mb-1"><a href="farmer-update.php?updatedid=' . $id . '" class="text-dark">Update</a></button>
                                         </td>
                                     </tr>';
                             }

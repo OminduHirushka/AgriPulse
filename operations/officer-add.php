@@ -3,15 +3,13 @@ session_start();
 require_once '../dbConnection.php';
 
 if (!isset($_SESSION['email'])) {
-
     header("Location: ../adminlogin.php");
     exit();
 }
 
 $email = $_SESSION['email'];
 
-function showAlert($message)
-{
+function showAlert($message) {
     echo '<script>alert("' . $message . '");</script>';
 }
 

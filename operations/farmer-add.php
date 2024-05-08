@@ -2,11 +2,36 @@
 session_start();
 require_once '../dbConnection.php';
 
-if (isset($_SESSION['email'])) {
-    $email = $_SESSION['email'];
-} else {
-    header("Location: ../adminlogin.php");
-    exit();
+function showAlert($message) {
+    echo '<script>alert("' . $message . '");</script>';
+}
+
+$fname = $lname = $uname = $email = $mobile = $district = $pass = "";
+
+if (isset($_POST['add-btn'])) {
+    $fname = $_POST["fname"];
+    $lname = $_POST["lname"];
+    $uname = $_POST["uname"];
+    $email = $_POST["email"];
+    $mobile = $_POST["mobile"];
+    $district = $_POST["district"];
+    $pass = $_POST["pass"];
+    $confirm = $_POST["confirm"];
+
+    if ($pass != $confirm) {
+        showAlert("Passwords must be matched!");
+    } else {
+        $sql = "INSERT INTO farmars (fname, lname, uname, email, mobile, district, pass) 
+                VALUES ('$fname', '$lname', '$uname', '$email', '$mobile', '$district', '$pass')";
+
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            showAlert("Succefully Added!");
+        } else {
+            echo mysqli_error($conn);
+        }
+    }
 }
 ?>
 
